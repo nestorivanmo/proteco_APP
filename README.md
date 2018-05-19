@@ -1,2 +1,2 @@
 # proteco_APP
-App en Android para el PROTECO
+App de Android desarrollado en Java para el apoyo a las personas que se inscriban a cursos que ofrece Proteco.
