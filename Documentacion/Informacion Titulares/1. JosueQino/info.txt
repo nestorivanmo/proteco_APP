@@ -1,0 +1,8 @@
+Nombre: Josue Quiño
+Correo: josueqr.proteco@gmail.com 
+Useraname: josueqr
+password: josueqr
+urlFoto: josueQuino.jpg
+Procedencia: Estudiante UNAM
+
+Telefono: 
