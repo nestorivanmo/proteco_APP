@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+
+import static android.content.ContentValues.TAG;
 
 public class HomeFragment extends Fragment {
 
@@ -46,6 +49,14 @@ public class HomeFragment extends Fragment {
                 viewHolder.setTitle(model.getTitle());
                 viewHolder.setDesc(model.getDesc());
                 viewHolder.setImage(getActivity().getApplicationContext(), model.getImage());
+            }
+
+            @Override
+            public void onBindViewHolder(BlogViewHolder viewHolder, int position) {
+                Log.d(TAG, "onBindViewHolder: ");
+
+
+
             }
         };
 

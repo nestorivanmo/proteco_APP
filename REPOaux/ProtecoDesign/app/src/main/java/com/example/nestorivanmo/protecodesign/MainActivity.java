@@ -25,9 +25,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Global");
         mDatabase.keepSynced(true);
-        mBlogList = (RecyclerView) findViewById(R.id.myrecyclerview);
+        mBlogList = findViewById(R.id.myrecyclerview);
         mBlogList.setHasFixedSize(true);
         mBlogList.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         }
         public void setImage(Context ctx, String image){
             ImageView post_Image = (ImageView) mView.findViewById(R.id.post_image);
-            Picasso.with(ctx).load(image).into(post_Image);
+            Picasso.get().load(image).into(post_Image);
         }
     }
 }
