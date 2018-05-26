@@ -6,19 +6,21 @@
     android:orientation="vertical"
     app:cardCornerRadius="12dp"
     android:layout_margin="7dp"
-    android:elevation="90dp">
+    android:elevation="90dp"
+    android:id="@+id/parent_layout"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="248dp"
+        android:layout_height="270dp"
         android:orientation="vertical"
-        android:background="#121111">
+        android:background="@color/bg">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
-            android:id="@+id/post_image"/>
+            android:id="@+id/post_image" />
 
         <TextView
             android:layout_width="match_parent"
@@ -33,7 +35,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/post_desc"
             android:textColor="#fff"
-            android:text="POST DESCRIPTION"/>
+            android:text="Fecha"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cursoHorario"
+            android:textColor="#fff"
+            android:text="Horario"
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 

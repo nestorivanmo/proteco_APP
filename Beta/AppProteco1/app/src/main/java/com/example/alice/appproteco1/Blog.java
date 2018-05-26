@@ -5,6 +5,7 @@ public class Blog {
     private String title;
     private String desc;
     private String image;
+    private String desc_larga;
 
     public Blog(String title, String desc, String image) {
         this.title = title;
@@ -12,6 +13,13 @@ public class Blog {
         this.image = image;
     }
 
+    public String getDesc_larga() {
+        return desc_larga;
+    }
+
+    public void setDesc_larga(String desc_larga) {
+        this.desc_larga = desc_larga;
+    }
 
     public String getTitle() {
         return title;
