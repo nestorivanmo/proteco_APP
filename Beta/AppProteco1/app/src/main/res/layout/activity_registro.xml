@@ -32,7 +32,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="140dp"
             android:ems="10"
-            android:hint="Nombre"
+            android:hint="Nombre Completo"
             android:inputType="textPersonName"/>
 
         <EditText
@@ -69,15 +69,29 @@
             android:inputType="textPassword" />
 
         <EditText
+            android:id="@+id/registroEditTextContrasenaConfirmar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="340dp"
+            android:ems="10"
+            android:hint="Confirma contraseña"
+            android:inputType="textPassword" />
+
+
+
+        <EditText
             android:id="@+id/registroEditTextEmail"
+            android:layout_below="@+id/registroEditTextUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="240dp"
             android:ems="10"
-            android:hint="Email"
-            android:inputType="textPassword" />
+            android:inputType="textEmailAddress"
+            android:hint="Email"/>
 
 
 
@@ -87,9 +101,28 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="180dp"
+            android:layout_marginBottom="130dp"
             android:ems="10"
             android:hint="Número de cuenta"
             android:inputType="number" />
+
+        <TextView
+            android:id="@+id/ingresoTextViewNoAccount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:text="¿Ya tienes una cuenta? Inicia Sesión"
+            android:textSize="16dp" />
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/barra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
