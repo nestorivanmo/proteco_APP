@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/slide_image"
+        android:layout_width="262dp"
+        android:layout_height="149dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        app:srcCompat="@drawable/bolitas1" />
+
+    <TextView
+        android:id="@+id/slide_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="PrimerImagen" />
+
+    <TextView
+        android:id="@+id/slide_desc"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:text="Lorem ipsum dolor sit amet, lobortis auctor eget eleifend sodales in. Arcu laoreet eu ipsum. Et in, magna tortor pellentesque dictum varius. Condimentum bibendum ac tempor, curabitur eget senectus, eum nullam voluptatem integer ut nonummy pede, id convallis facilisi. Voluptatum eu et, egestas elit nec in non tempus in, quia mi, dui erat quis in facilisi eros, nam magna metus. " />
+</RelativeLayout>
