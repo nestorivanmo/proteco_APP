@@ -33,10 +33,9 @@ public class HomeFragment extends Fragment {
 
     private ArrayList<String> cursos = new ArrayList<>();
     private ArrayList<String> imagenesCursos = new ArrayList<>();
-    private ArrayList<String> fechas = new ArrayList<>();
-    private ArrayList<String> horarios = new ArrayList<>();
     private ArrayList<String> descripciones = new ArrayList<>();
     private ArrayList<String> desc_larga = new ArrayList<>();
+
     private Context mContext;
 
     @Override

@@ -19,7 +19,6 @@ public class GalleryActivity extends AppCompatActivity{
         setContentView(R.layout.activity_gallery);
         Log.d(TAG, "onCreate: started...");
 
-
         getIncomingIntent();
     }
 
