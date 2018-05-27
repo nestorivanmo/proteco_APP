@@ -7,30 +7,18 @@
     android:background="#fff"
     tools:context=".BusquedaFragment">
 
-
     <TextView
-        android:id="@+id/noticiasAnuncio"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NOTICIAS"
+
+        android:text="adsfasdf"
         />
 
-    <TextView
-        android:id="@+id/titularesAnuncio"
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/noticiasAnuncio"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="¿Quiénes son los nuevos titulares?"/>
-
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@id/titularesAnuncio"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerViewNoticias"
         android:orientation="horizontal">
-
     </android.support.v7.widget.RecyclerView>
 
 

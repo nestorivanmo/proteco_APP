@@ -7,12 +7,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.alice.appproteco1.Objetos.Titular;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -20,10 +22,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class BusquedaFragment extends Fragment {
 
     private RecyclerView mBecariosList;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabaseBecarios;
+
+    private ArrayList<String> titulares = new ArrayList<>();
+    private ArrayList<String> imagenesTitulares = new ArrayList<>();
+    private ArrayList<String> quotesTitulares = new ArrayList<>();
 
 
     @Nullable
@@ -32,11 +42,11 @@ public class BusquedaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view= inflater.inflate(R.layout.fragment_busqueda, container, false);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Global");
-        mDatabase.keepSynced(true);
+        mDatabaseBecarios = FirebaseDatabase.getInstance().getReference().child("Titulares");
+        mDatabaseBecarios.keepSynced(true);
         mBecariosList = view.findViewById(R.id.recyclerViewNoticias);
         mBecariosList.setHasFixedSize(true);
-        mBecariosList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mBecariosList.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
         return view;
     }
@@ -45,29 +55,46 @@ public class BusquedaFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-
-        FirebaseRecyclerAdapter<Titular, TitularViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Titular, TitularViewHolder>(Titular.class, R.layout.activity_card_becarios, TitularViewHolder.class, mDatabase) {
+        FirebaseRecyclerAdapter<Titular, TitularViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Titular, TitularViewHolder>
+                (Titular.class, R.layout.activity_card_becarios, TitularViewHolder.class, mDatabaseBecarios) {
             @Override
-            protected void populateViewHolder(TitularViewHolder viewHolder, Titular model, int position) {
+            protected void populateViewHolder(final TitularViewHolder viewHolder, Titular model, final int position) {
 
-                //viewHolder.setImagenTitular(getActivity().getApplicationContext(), model.getImage());
-                //viewHolder.setNombreTitular(model.getTitular());
-               // viewHolder.setQuoteTitular(model.getQuote());
+                imagenesTitulares.add(model.getImage());
+                titulares.add(model.getTitular());
+                quotesTitulares.add(model.getQuote());
 
+                viewHolder.setImagenTitular(getActivity().getApplicationContext(), model.getImage());
+                viewHolder.setNombreTitular(model.getTitular());
+                viewHolder.setQuoteTitular(model.getQuote());
             }
+
+            @Override
+            public void onBindViewHolder(TitularViewHolder viewHolder, final int position) {
+                super.onBindViewHolder(viewHolder, position);
+                viewHolder.imagenTitular.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), position, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
         };
+
 
         mBecariosList.setAdapter(firebaseRecyclerAdapter);
     }
 
     public static class TitularViewHolder extends RecyclerView.ViewHolder{
         View mView;
-        ImageView imagenTitular;
+
+        CircleImageView imagenTitular;
         TextView nombreTitular;
         TextView quoteTitular;
 
-        public TitularViewHolder(final View itemView){
+
+        public TitularViewHolder(View itemView){
             super(itemView);
             mView = itemView;
             imagenTitular = itemView.findViewById(R.id.titularImagen);
@@ -76,7 +103,7 @@ public class BusquedaFragment extends Fragment {
         }
 
         public void setImagenTitular(Context ctx, String imagenTitular) {
-            ImageView post_Image = (ImageView) mView.findViewById(R.id.post_image);
+            CircleImageView post_Image =  mView.findViewById(R.id.titularImagen);
             Picasso.with(ctx).load(imagenTitular).into(post_Image);
         }
 

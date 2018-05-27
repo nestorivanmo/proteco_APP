@@ -16,6 +16,4 @@
         android:icon="@drawable/ic_news"
         android:title="Noticias" />
 
-
-
 </menu>
