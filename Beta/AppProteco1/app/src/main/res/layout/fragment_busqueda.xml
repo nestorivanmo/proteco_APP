@@ -22,12 +22,37 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_below="@+id/tvNuevosTitulares"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="7dp"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:id="@+id/recyclerViewNoticias"
         android:orientation="horizontal">
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_below="@+id/recyclerViewNoticias"
+        android:id="@+id/tvUnete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="@font/archivo_black"
+        android:textColor="#F2CF46"
+        android:textSize="20sp"
+        android:text="Únete a PROTECO"
+        />
+    <TextView
+        android:layout_below="@+id/tvUnete"
+        android:id="@+id/tvNuevasNoticias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="@font/archivo_black"
+        android:textColor="#F2CF46"
+        android:textSize="20sp"
+        android:text="Noticias"
+        />
 
 
 </RelativeLayout>
