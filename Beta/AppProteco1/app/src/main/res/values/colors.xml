@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="bg">#586987</color>
     <color name="transparent">#000</color>
+    <color name="colorSplash">#FFFDE7</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="patito">#F2CF46</color>
+    <color name="azulito">#002541</color>
+    <color name="colorTransparentWhite">#CCCCCC</color>
 </resources>
