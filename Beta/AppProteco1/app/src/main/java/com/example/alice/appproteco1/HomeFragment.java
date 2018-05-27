@@ -1,6 +1,7 @@
 package com.example.alice.appproteco1;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -13,8 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.alice.appproteco1.Objetos.Blog;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -60,6 +63,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onStart(){
         super.onStart();
+
         FirebaseRecyclerAdapter<Blog, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>
                 (Blog.class, R.layout.blog_row, BlogViewHolder.class, mDatabase) {
 
@@ -106,22 +110,20 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
+
+
             }
 
+
+
+
         };
+
 
         mBlogList.setAdapter(firebaseRecyclerAdapter);
 
     }
 
-    public void verMisCursos(){
-
-        FavoritosFragment misCursos = new FavoritosFragment();
-
-        getFragmentManager().beginTransaction().replace(R.id.galeriaFragment, misCursos).commit();
-
-
-    }
 
     public static class BlogViewHolder extends RecyclerView.ViewHolder{
 
