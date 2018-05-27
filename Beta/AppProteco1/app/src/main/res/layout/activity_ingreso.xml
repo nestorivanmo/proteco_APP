@@ -6,6 +6,20 @@
     android:fitsSystemWindows="true"
     tools:context=".Ingreso">
 
+    <TextView
+        android:id="@+id/registroEditTextTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/archivo_black"
+        android:text="PROTECO"
+        android:textColor="#F2CF46"
+        android:textSize="100px"
+        android:layout_gravity="center_horizontal"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,14 +32,14 @@
             android:layout_width="wrap_content"
             android:layout_height="72dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="100dp" />
 
         <!-- Email Label -->
         <EditText
             android:id="@+id/ingresoEditTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="Usuario"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -33,27 +47,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Password"
+            android:hint="Contraseña"
             android:inputType="textPassword" />
 
         <!-- Password Label -->
-
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/ingresoBtnLogin"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_marginTop="24dp"
-            android:padding="12dp"
-            android:text="Login" />
+            android:layout_marginBottom="50dp"
+            android:text="Login"
+            android:background="#002541"
+            android:textColor="#fff"/>
 
         <TextView
             android:id="@+id/ingresoTextViewNoAccount"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="60dp"
             android:gravity="center"
             android:text="¿Aún no tienes una cuenta? Crea una"
             android:textSize="16dip" />
+
     </LinearLayout>
+
+
 </FrameLayout>

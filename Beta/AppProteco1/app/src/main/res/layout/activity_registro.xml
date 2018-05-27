@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,8 +17,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="28dp"
-            android:text="Registro" />
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="PROTECO"
+            android:textColor="#F2CF46"
+            android:textSize="100px"
+            />
 
         <EditText
             android:id="@+id/registroEditTextNombre"
@@ -26,10 +30,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="140dp"
             android:ems="10"
             android:hint="Nombre"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/registroEditTextUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="190dp"
+            android:ems="10"
+            android:hint="Usuario"
+            android:inputType="textPersonName"/>
 
         <Button
             android:id="@+id/registroBtnEnviar"
@@ -38,7 +53,9 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="70dp"
-            android:text="Enviar" />
+            android:text="Regístrate"
+            android:background="#002541"
+            android:textColor="#fff"/>
 
         <EditText
             android:id="@+id/registroEditTextContrasena"
@@ -46,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="158dp"
+            android:layout_marginTop="290dp"
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword" />
@@ -55,10 +72,14 @@
             android:id="@+id/registroEditTextEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="240dp"
             android:ems="10"
-            android:hint="E-mail"
-            android:inputType="textEmailAddress" />
+            android:hint="Email"
+            android:inputType="textPassword" />
+
+
 
         <EditText
             android:id="@+id/registroEditTextCuenta"
@@ -66,9 +87,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="147dp"
+            android:layout_marginBottom="180dp"
             android:ems="10"
             android:hint="Número de cuenta"
             android:inputType="number" />
     </RelativeLayout>
-</FrameLayout>
+</android.support.constraint.ConstraintLayout>
