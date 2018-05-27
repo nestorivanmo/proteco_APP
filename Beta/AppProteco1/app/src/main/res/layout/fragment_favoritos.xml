@@ -24,6 +24,8 @@
         android:layout_alignParentTop="true"
         android:fontFamily="@font/archivo_black"
         android:text="Mis Cursos"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
         android:textColor="#F2CF46"
         android:textSize="25sp" />
 

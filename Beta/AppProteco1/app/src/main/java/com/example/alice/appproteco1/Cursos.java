@@ -40,6 +40,11 @@ public class Cursos extends AppCompatActivity {
                         case R.id.navigation_notifications:
                             selectedFragment = new BusquedaFragment();
                             break;
+
+                        case R.id.navigation_settings:
+                            selectedFragment = new SettingsFragment();
+                            break;
+
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
