@@ -1,11 +1,16 @@
 package com.example.alice.appproteco1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -13,13 +18,33 @@ public class GalleryActivity extends AppCompatActivity{
 
     private static final String TAG = "GalleryActivity";
 
+    private FloatingActionButton agregarBTN;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
         Log.d(TAG, "onCreate: started...");
-
+        agregarBTN = findViewById(R.id.agregarCursoButton);
         getIncomingIntent();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        agregarBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(GalleryActivity.this, "Agregar curso", Toast.LENGTH_LONG).show();
+
+                FavoritosFragment fragment = new FavoritosFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.galeriaFragment, fragment);
+                transaction.commit();
+            }
+        });
     }
 
     private void getIncomingIntent(){

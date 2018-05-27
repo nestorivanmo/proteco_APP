@@ -3,16 +3,25 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+<<<<<<< HEAD
         <entry key="imageWizard">
+=======
+        <entry key="vectorWizard">
+>>>>>>> d7284fb56aea1ee04b2fe704e6c06d2cea51ff92
           <value>
             <PersistentState>
               <option name="children">
                 <map>
+<<<<<<< HEAD
                   <entry key="imageAssetPanel">
+=======
+                  <entry key="vectorAssetStep">
+>>>>>>> d7284fb56aea1ee04b2fe704e6c06d2cea51ff92
                     <value>
                       <PersistentState>
                         <option name="children">
                           <map>
+<<<<<<< HEAD
                             <entry key="launcher">
                               <value>
                                 <PersistentState>
@@ -53,6 +62,14 @@
                                       <entry key="legacyIconShape" value="CIRCLE" />
                                       <entry key="outputName" value="ic_launcher_quienes" />
                                       <entry key="webIconShape" value="CIRCLE" />
+=======
+                            <entry key="clipartAsset">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_black_24dp.xml" />
+>>>>>>> d7284fb56aea1ee04b2fe704e6c06d2cea51ff92
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -60,6 +77,15 @@
                             </entry>
                           </map>
                         </option>
+<<<<<<< HEAD
+=======
+                        <option name="values">
+                          <map>
+                            <entry key="outputName" value="ic_add" />
+                            <entry key="sourceFile" value="$USER_HOME$" />
+                          </map>
+                        </option>
+>>>>>>> d7284fb56aea1ee04b2fe704e6c06d2cea51ff92
                       </PersistentState>
                     </value>
                   </entry>

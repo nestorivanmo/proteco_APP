@@ -121,11 +121,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:src="@drawable/send"
-                android:id="@+id/fab"
-                android:tint="#fff"
-                android:layout_alignParentBottom="true"
-
+                android:src="@drawable/ic_add"
+                android:id="@+id/agregarCursoButton"
+                android:tint="#F2CF46"
+                android:layout_marginLeft="330dp"
+                app:backgroundTint="#002541"
                 app:fabSize="mini"
                 />
 
