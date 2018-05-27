@@ -12,13 +12,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="285dp"
         android:orientation="vertical"
-        android:background="@color/bg">
+        android:background="@color/bg"
+        >
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="170dp"
             android:scaleType="centerCrop"
             android:id="@+id/post_image" />
 
@@ -28,6 +29,7 @@
             android:id="@+id/post_title"
             android:text="POST TITLE"
             android:textSize="20dp"
+            android:fontFamily="@font/archivo_black"
             android:textColor="#ffff"/>
 
         <TextView
@@ -36,12 +38,14 @@
             android:id="@+id/post_desc"
             android:textColor="#fff"
             android:text="Fecha"
+            android:fontFamily="@font/archivo_black"
             android:layout_marginTop="8dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/cursoHorario"
+            android:fontFamily="@font/archivo_black"
             android:textColor="#fff"
             android:text="Horario"
             android:layout_marginTop="8dp"/>

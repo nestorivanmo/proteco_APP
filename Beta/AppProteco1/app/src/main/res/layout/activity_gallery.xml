@@ -25,21 +25,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:text="Canada"
+                android:text="Curso "
                 android:textSize="25sp"
-                android:textColor="#000"/>
+                android:fontFamily="@font/archivo_black"
+                android:textColor="#002541"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descripcion"
-                android:layout_marginLeft="10dp"/>
+                android:text="Descripción"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/archivo_black"/>
 
             <TextView
+                android:layout_below="@+id/tituloCurso"
                 android:id="@+id/descripcionCurso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="descipcion"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 />
@@ -48,13 +50,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fechas"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/archivo_black"/>
 
             <TextView
                 android:id="@+id/cursosH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="fecha"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"/>
 
@@ -62,13 +64,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Horarios"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/archivo_black"/>
 
             <TextView
                 android:id="@+id/horariosC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="fecha"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"/>
 
@@ -76,13 +78,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Precio"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/archivo_black"/>
 
             <TextView
                 android:id="@+id/precio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$$$$"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"/>
 
@@ -90,13 +92,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Titular"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/archivo_black"/>
 
             <TextView
                 android:id="@+id/titular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TITULAR"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"/>
 
@@ -104,13 +106,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lugar"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/archivo_black"/>
 
             <TextView
                 android:id="@+id/lugar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LUGAR"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"/>
 
@@ -123,6 +125,7 @@
                 android:text="Agregar"
                 android:textColor="#fff"
                 android:onClick="verMisCursos"
+                android:fontFamily="@font/archivo_black"
                 />
 
         </LinearLayout>
