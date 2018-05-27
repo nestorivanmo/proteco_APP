@@ -11,23 +11,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/portadaBtnIniciarSesion"
+        <TextView
+            android:id="@+id/registroEditTextTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="21dp"
-            android:layout_marginStart="25dp"
-            android:text="Iniciar Sesión" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="PROTECO"
+            android:textColor="#F2CF46"
+            android:textSize="100px"
+            android:layout_gravity="center_horizontal"
+            />
 
-        <Button
-            android:id="@+id/portadaBtnCursos"
-            android:layout_width="102dp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/portadaBtnIniciarSesion"
-            android:layout_marginEnd="25dp"
-            android:text="Cursos" />
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_marginTop="522dp"
+            >
+            <Button
+                android:id="@+id/portadaBtnIniciarSesion"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Iniciar Sesión"
+                android:textColor="#000"
+                android:background="#F2CF46"/>
+
+            <Button
+                android:id="@+id/portadaBtnCursos"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="CURSOS"
+                android:background="#002541"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
     </RelativeLayout>
+
 </FrameLayout>

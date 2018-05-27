@@ -31,14 +31,17 @@ public class GalleryActivity extends AppCompatActivity{
             String imagen_url = getIntent().getStringExtra("imagen_url");
             String titulo_curso = getIntent().getStringExtra("titulo");
             String desc_curso = getIntent().getStringExtra("desc");
-
-            setImage(imagen_url, titulo_curso, desc_curso);
+            String precioC = getIntent().getStringExtra("precio");
+            String horarioC = getIntent().getStringExtra("horario");
+            String titularC = getIntent().getStringExtra("titular");
+            String lugarC = getIntent().getStringExtra("lugar");
+            setImage(imagen_url, titulo_curso, desc_curso, horarioC, precioC, titularC, lugarC);
 
         }
 
     }
 
-    private void setImage(String imageUrl, String tituloCurso, String descCurso){
+    private void setImage(String imageUrl, String tituloCurso, String descCurso, String horario, String precio, String titular, String lugar){
         Log.d(TAG, "setImage: setting the image and name to widgets");
 
         TextView name = findViewById(R.id.tituloCurso);
@@ -48,6 +51,18 @@ public class GalleryActivity extends AppCompatActivity{
         desc.setText(descCurso);
 
         ImageView image = findViewById(R.id.imagenCurso);
+
+        TextView precioCurso = findViewById(R.id.precio);
+        precioCurso.setText(precio);
+
+        TextView horarioCurso = findViewById(R.id.cursosH);
+        horarioCurso.setText(horario);
+
+        TextView titularCurso = findViewById(R.id.titular);
+        titularCurso.setText(titular);
+
+        TextView lugarCurso = findViewById(R.id.lugar);
+        lugarCurso.setText(lugar);
 
         Picasso.with(this).load(imageUrl).into(image);
     }
