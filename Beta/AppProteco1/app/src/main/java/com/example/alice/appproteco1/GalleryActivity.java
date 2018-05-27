@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.alice.appproteco1.Objetos.Blog;
 import com.squareup.picasso.Picasso;
 
 public class GalleryActivity extends AppCompatActivity{
@@ -19,6 +20,8 @@ public class GalleryActivity extends AppCompatActivity{
     private static final String TAG = "GalleryActivity";
 
     private FloatingActionButton agregarBTN;
+
+    String imagen_url,titulo_curso, desc_curso, precioC, horarioC, titularC, lugarC;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,13 +39,9 @@ public class GalleryActivity extends AppCompatActivity{
         agregarBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(GalleryActivity.this, "Agregar curso", Toast.LENGTH_LONG).show();
-
-                FavoritosFragment fragment = new FavoritosFragment();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.galeriaFragment, fragment);
-                transaction.commit();
+                //FavoritosFragment fragment = (FavoritosFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_favoritos);
+                //fragment.doSomething("prueba");
             }
         });
     }
@@ -53,7 +52,7 @@ public class GalleryActivity extends AppCompatActivity{
 
             Log.d(TAG, "getIncomingIntent: found intent extras");
 
-            String imagen_url = getIntent().getStringExtra("imagen_url");
+            imagen_url = getIntent().getStringExtra("imagen_url");
             String titulo_curso = getIntent().getStringExtra("titulo");
             String desc_curso = getIntent().getStringExtra("desc");
             String precioC = getIntent().getStringExtra("precio");

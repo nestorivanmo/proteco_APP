@@ -91,5 +91,9 @@ public class FavoritosFragment extends Fragment {
 
         }
     }
+
+    public void doSomething(String url){
+        Toast.makeText(getContext(), url, Toast.LENGTH_SHORT).show();
+    }
 }
 
