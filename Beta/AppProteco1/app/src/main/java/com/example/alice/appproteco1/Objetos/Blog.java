@@ -1,4 +1,4 @@
-package com.example.alice.appproteco1;
+package com.example.alice.appproteco1.Objetos;
 
 public class Blog {
 
