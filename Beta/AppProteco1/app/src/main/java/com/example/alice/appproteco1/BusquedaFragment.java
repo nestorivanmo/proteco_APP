@@ -2,11 +2,13 @@ package com.example.alice.appproteco1;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.alice.appproteco1.Objetos.Noticia;
 import com.example.alice.appproteco1.Objetos.Titular;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -29,24 +32,41 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class BusquedaFragment extends Fragment {
 
     private RecyclerView mBecariosList;
+    private RecyclerView mNoticiasList;
     private DatabaseReference mDatabaseBecarios;
+    private DatabaseReference mDatabaseNoticias;
 
     private ArrayList<String> titulares = new ArrayList<>();
     private ArrayList<String> imagenesTitulares = new ArrayList<>();
     private ArrayList<String> quotesTitulares = new ArrayList<>();
 
+    private ArrayList<String> titulosNoticias = new ArrayList<>();
+    private ArrayList<String> imagenesNoticias = new ArrayList<>();
+    private ArrayList<String> cuerpoNoticias = new ArrayList<>();
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         View view= inflater.inflate(R.layout.fragment_busqueda, container, false);
 
         mDatabaseBecarios = FirebaseDatabase.getInstance().getReference().child("Titulares");
         mDatabaseBecarios.keepSynced(true);
-        mBecariosList = view.findViewById(R.id.recyclerViewNoticias);
+        mBecariosList = view.findViewById(R.id.recyclerViewTitulares);
         mBecariosList.setHasFixedSize(true);
         mBecariosList.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+
+        mDatabaseNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
+        mDatabaseNoticias.keepSynced(true);
+        mNoticiasList = view.findViewById(R.id.recyclerViewNoticias);
+        mNoticiasList.setHasFixedSize(true);
+
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+
+        mNoticiasList.setLayoutManager(staggeredGridLayoutManager);
+
 
         return view;
     }
@@ -83,7 +103,43 @@ public class BusquedaFragment extends Fragment {
         };
 
 
+        FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder> firebaseNoticiaRecyclerAdapter = new FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder>
+                (Noticia.class, R.layout.activity_card_noticias, NoticiaViewHolder.class, mDatabaseNoticias) {
+            @Override
+            protected void populateViewHolder(NoticiaViewHolder viewHolder, Noticia model, int position) {
+
+                imagenesNoticias.add(model.getImagenNoticia());
+                titulosNoticias.add(model.getTituloNoticia());
+                cuerpoNoticias.add(model.getCuerpoNoticia());
+
+                viewHolder.setImagen(getActivity().getApplicationContext(), model.getImagenNoticia());
+                viewHolder.setTitulo(model.getTituloNoticia());
+                viewHolder.setCuerpo(model.getCuerpoNoticia());
+
+            }
+
+            @Override
+            public void onBindViewHolder(NoticiaViewHolder viewHolder, final int position) {
+                super.onBindViewHolder(viewHolder, position);
+                /*viewHolder.imagen.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        return false;
+                    }
+                });*/
+
+                viewHolder.imagen.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), position, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        };
+
+
         mBecariosList.setAdapter(firebaseRecyclerAdapter);
+        mNoticiasList.setAdapter(firebaseNoticiaRecyclerAdapter);
     }
 
     public static class TitularViewHolder extends RecyclerView.ViewHolder{
@@ -115,6 +171,38 @@ public class BusquedaFragment extends Fragment {
         public void setQuoteTitular(String quoteTitular) {
             TextView quoteTV = mView.findViewById(R.id.titularQuote);
             quoteTV.setText(quoteTitular);
+        }
+    }
+
+    public static class NoticiaViewHolder extends RecyclerView.ViewHolder{
+        ImageView imagen;
+        TextView titulo;
+        TextView cuerpo;
+        View mView;
+
+        public NoticiaViewHolder(View itemView) {
+            super(itemView);
+            mView = itemView;
+
+            this.imagen = itemView.findViewById(R.id.imagenNoticia);
+            this.titulo = itemView.findViewById(R.id.tituloNoticia);
+            this.cuerpo = itemView.findViewById(R.id.cuerpoNoticia);
+
+        }
+
+        public void setImagen(Context ctx, String imagen) {
+            ImageView imagenN = mView.findViewById(R.id.imagenNoticia);
+            Picasso.with(ctx).load(imagen).into(imagenN);
+        }
+
+        public void setTitulo(String titulo) {
+            TextView tituloN = mView.findViewById(R.id.tituloNoticia);
+            tituloN.setText(titulo);
+        }
+
+        public void setCuerpo(String cuerpo) {
+            TextView cuerpoN = mView.findViewById(R.id.cuerpoNoticia);
+            cuerpoN.setText(cuerpo);
         }
     }
 

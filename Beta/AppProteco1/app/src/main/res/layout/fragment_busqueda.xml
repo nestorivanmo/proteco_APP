@@ -1,58 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#fff"
+    android:background="#f2f2f2"
     tools:context=".BusquedaFragment">
 
-    <TextView
-        android:id="@+id/tvNuevosTitulares"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:fontFamily="@font/archivo_black"
-        android:textColor="#F2CF46"
-        android:textSize="20sp"
-        android:text="Nuevos titulares"
-        />
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/tvNuevosTitulares"
-        android:layout_marginTop="7dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:id="@+id/recyclerViewNoticias"
-        android:orientation="horizontal">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_below="@+id/recyclerViewNoticias"
-        android:id="@+id/tvUnete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:fontFamily="@font/archivo_black"
-        android:textColor="#F2CF46"
-        android:textSize="20sp"
-        android:text="Únete a PROTECO"
-        />
-    <TextView
-        android:layout_below="@+id/tvUnete"
-        android:id="@+id/tvConvocatoria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:fontFamily="@font/archivo_black"
-        android:textColor="#F2CF46"
-        android:textSize="20sp"
-        android:text="Convocatoria"
-        />
+        <TextView
+            android:id="@+id/tvNuevosTitulares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/archivo_black"
+            android:textColor="#F2CF46"
+            android:textSize="20sp"
+            android:text="Nuevos titulares"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@+id/tvNuevosTitulares"
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:id="@+id/recyclerViewTitulares"
+            android:orientation="horizontal">
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/tvNoticias"
+            android:layout_below="@+id/recyclerViewTitulares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Noticias"
+            android:fontFamily="@font/archivo_black"
+            android:textColor="#F2CF46"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="5dp"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvNoticias"
+            android:id="@+id/recyclerViewNoticias"
+            android:orientation="vertical"
+            >
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
 
 
-</RelativeLayout>
+</ScrollView>
