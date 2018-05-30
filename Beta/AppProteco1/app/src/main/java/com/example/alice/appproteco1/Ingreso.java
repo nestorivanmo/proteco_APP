@@ -18,8 +18,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Ingreso extends AppCompatActivity {
-    TextView tx;
+    TextView tx, txOlvidar;
     Button btn;
+
     private FirebaseAuth mAuth;
     EditText editTextEmail,editTextContrasena;
     ProgressBar barra;
@@ -27,9 +28,10 @@ public class Ingreso extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingreso);
-
+        txOlvidar = (TextView)findViewById(R.id.ingresoTextForgetPassword);
         btn = (Button)findViewById(R.id.ingresoBtnLogin);
         tx = (TextView)findViewById(R.id.ingresoTextViewNoAccount);
+
         tx.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -37,6 +39,15 @@ public class Ingreso extends AppCompatActivity {
                 startActivity(tx);
             }
         });
+
+        txOlvidar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent tx2 = new Intent(Ingreso.this, RecuperarContraseña.class);
+                startActivity(tx2);
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

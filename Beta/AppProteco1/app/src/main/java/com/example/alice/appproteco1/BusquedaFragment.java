@@ -52,7 +52,7 @@ public class BusquedaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view= inflater.inflate(R.layout.fragment_busqueda, container, false);
 
-        mDatabaseBecarios = FirebaseDatabase.getInstance().getReference().child("Titulares");
+        mDatabaseBecarios = FirebaseDatabase.getInstance().getReference().child("Titulares"); //base de datos
         mDatabaseBecarios.keepSynced(true);
         mBecariosList = view.findViewById(R.id.recyclerViewTitulares);
         mBecariosList.setHasFixedSize(true);
@@ -205,5 +205,4 @@ public class BusquedaFragment extends Fragment {
             cuerpoN.setText(cuerpo);
         }
     }
-
 }
