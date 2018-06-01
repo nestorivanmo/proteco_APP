@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_cursos"
+        android:icon="@drawable/ic_code"
         android:title=""
          />
 
@@ -20,7 +20,7 @@
 
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_news"
+        android:icon="@drawable/ic_estatica"
         android:title=""
         />
 

@@ -26,9 +26,9 @@ public class SliderAdapter extends PagerAdapter {
     public String [] slide_headings = {"¿Quiénes somos?", "Misión", "Visión"};
 
     public String [] slide_descs = {
-            "PROTECO es el Programa de Tecnología en Cómputo que busca formar personas altamente capacitadas en temas de computo.",
+            "PROTECO es el Programa de Tecnología en Cómputo de la UNAM que busca formar personas altamente capacitadas en temas de cómputo.",
             "Brindar un servicio de calidad llevando en alto el nombre y los valores de nuestra Máxima Casa de Estudios.",
-            "Establecer un proceso permanente, con herramientas de cómputo, para la formación de personal docente y de."
+            "Establecer un proceso permanente, con herramientas de cómputo, para la formación de personal docente y académico."
     };
     @Override
     public boolean isViewFromObject(View view, Object o){

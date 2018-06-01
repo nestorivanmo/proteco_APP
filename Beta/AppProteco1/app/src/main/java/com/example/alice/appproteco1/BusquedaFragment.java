@@ -113,7 +113,7 @@ public class BusquedaFragment extends Fragment {
                 viewHolder.setTitulo(model.getTitulo());
                 viewHolder.setCuerpo(model.getCuerpo());
 
-                Toast.makeText(getContext(), "Prueba" + titulosNoticias.get(0), Toast.LENGTH_SHORT).show();
+
 
             }
 

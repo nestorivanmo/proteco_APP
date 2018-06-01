@@ -21,11 +21,12 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bienvenido a Proteco"
+            android:text="PROTECO"
             android:textSize="32sp"
             android:gravity="center"
             android:textStyle="bold"
-            android:textColor="@color/patito"/>
+            android:textColor="@color/patito"
+            android:fontFamily="@font/archivo_black"/>
     </LinearLayout>
 
 </RelativeLayout>
