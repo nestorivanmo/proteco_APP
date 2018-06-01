@@ -109,13 +109,7 @@ public class HomeFragment extends Fragment {
                         //mContext.startActivity(intent);
                     }
                 });
-
-
-
             }
-
-
-
 
         };
 

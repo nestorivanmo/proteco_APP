@@ -5,11 +5,21 @@ public class Titular {
     private String titular;
     private String image;
     private String quote;
+    private String curso;
 
-    public Titular(String titular, String image, String quote) {
+    public Titular(String titular, String image, String quote, String curso) {
         this.titular = titular;
         this.image = image;
         this.quote = quote;
+        this.curso = curso;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
     public String getTitular() {

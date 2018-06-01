@@ -30,7 +30,7 @@
                 android:text="Canada"
                 android:id="@+id/tituloNoticia"
                 android:layout_below="@+id/imagenNoticia"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="7dp"
                 android:textColor="@color/azulito"
                 android:fontFamily="@font/archivo_black"/>
 

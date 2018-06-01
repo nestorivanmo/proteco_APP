@@ -1,6 +1,7 @@
 package com.example.alice.appproteco1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
@@ -29,6 +30,8 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static android.content.ContentValues.TAG;
+
 public class BusquedaFragment extends Fragment {
 
     private RecyclerView mBecariosList;
@@ -39,6 +42,7 @@ public class BusquedaFragment extends Fragment {
     private ArrayList<String> titulares = new ArrayList<>();
     private ArrayList<String> imagenesTitulares = new ArrayList<>();
     private ArrayList<String> quotesTitulares = new ArrayList<>();
+    private ArrayList<String> cursosTitulares = new ArrayList<>();
 
     private ArrayList<String> titulosNoticias = new ArrayList<>();
     private ArrayList<String> imagenesNoticias = new ArrayList<>();
@@ -80,6 +84,7 @@ public class BusquedaFragment extends Fragment {
                 imagenesTitulares.add(model.getImage());
                 titulares.add(model.getTitular());
                 quotesTitulares.add(model.getQuote());
+                cursosTitulares.add(model.getCurso());
 
                 viewHolder.setImagenTitular(getActivity().getApplicationContext(), model.getImage());
                 viewHolder.setNombreTitular(model.getTitular());
@@ -92,7 +97,13 @@ public class BusquedaFragment extends Fragment {
                 viewHolder.imagenTitular.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getContext(), position, Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(getContext(), TitularesActivity.class);
+                        intent.putExtra("imagen_url", imagenesTitulares.get(position));
+                        intent.putExtra("titular", titulares.get(position));
+                        intent.putExtra("quote", quotesTitulares.get(position));
+                        intent.putExtra("curso", cursosTitulares.get(position));
+                        getContext().startActivity(intent);
                     }
                 });
             }
@@ -113,20 +124,11 @@ public class BusquedaFragment extends Fragment {
                 viewHolder.setTitulo(model.getTitulo());
                 viewHolder.setCuerpo(model.getCuerpo());
 
-
-
             }
 
             @Override
             public void onBindViewHolder(NoticiaViewHolder viewHolder, final int position) {
                 super.onBindViewHolder(viewHolder, position);
-
-                viewHolder.imagen.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(getContext(), position, Toast.LENGTH_SHORT).show();
-                    }
-                });
             }
        };
 

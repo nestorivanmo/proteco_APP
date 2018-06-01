@@ -28,7 +28,7 @@
             android:layout_below="@+id/tvNuevosTitulares"
             android:layout_marginTop="7dp"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="160dp"
             android:id="@+id/recyclerViewTitulares"
             android:orientation="horizontal">
         </android.support.v7.widget.RecyclerView>

@@ -20,6 +20,7 @@
         <activity android:name=".Ingreso" />
         <activity android:name=".Cursos" />
         <activity android:name=".GalleryActivity" />
+        <activity android:name=".TitularesActivity"/>
         <activity android:name=".Portada" />
 
         <meta-data
