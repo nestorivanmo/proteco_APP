@@ -12,6 +12,8 @@ import static android.support.constraint.Constraints.TAG;
 
 public class Usuario {
     private String username,email,cuenta,nombre;
+    static boolean recuperado;
+
 
     public Usuario(String username, String email, String cuenta, String nombre){
         this.username=username;
@@ -35,19 +37,22 @@ public class Usuario {
         FirebaseAuth.getInstance().signOut();
     }
 
-    public static void enviarCorreo(String emailAddress ){
+    public static boolean enviarCorreo(String emailAddress){
         FirebaseAuth auth = FirebaseAuth.getInstance();
-
+        recuperado=false;
         auth.sendPasswordResetEmail(emailAddress)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "Email sent.");
+                            recuperado=true;
                         }
                     }
                 });
+        return recuperado;
     }
+
+
 
     public String getUsername() {
         return username;

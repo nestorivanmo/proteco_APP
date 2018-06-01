@@ -3,6 +3,7 @@ package com.example.alice.appproteco1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -25,7 +26,7 @@ public class Splash extends AppCompatActivity {
         Thread timer = new Thread(){
             public void run(){
                 try{
-                    sleep(5000);
+                    sleep(3000);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally{
@@ -37,3 +38,4 @@ public class Splash extends AppCompatActivity {
         timer.start();
     }
 }
+

@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recupera tu contraseña"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        />
+
     <EditText
         android:id="@+id/recuperarNuevaContrasena"
         android:layout_width="170dp"
@@ -12,10 +22,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="223dp"
-        android:hint="Nueva contraseña"
-        android:inputType="textPassword" />
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:id="@+id/ingresoBtnRecuperar"
         android:layout_width="170dp"
         android:layout_height="42dp"

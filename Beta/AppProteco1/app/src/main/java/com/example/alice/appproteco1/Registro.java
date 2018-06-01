@@ -86,11 +86,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
             correo.requestFocus();
             return;
         }
+
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             correo.setError("Escribe un correo valido");
             correo.requestFocus();
             return;
         }
+
         if(password.isEmpty()){
             contrasena.setError("Escribe un usuario");
             contrasena.requestFocus();
