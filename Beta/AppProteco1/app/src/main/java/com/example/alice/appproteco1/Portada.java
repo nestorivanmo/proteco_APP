@@ -10,13 +10,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Portada extends AppCompatActivity {
+public class Portada extends AppCompatActivity implements View.OnClickListener{
     private ViewPager mSliderViewPager;
     private LinearLayout mDotLayout;
 
     private SliderAdapter sliderAdapter;
     private TextView[] mDots;
-
+    private TextView titulo;
+    private int contador;
     Button btn1, btn2;
     public static final long DURATION = 1000;
 
@@ -62,6 +63,8 @@ public class Portada extends AppCompatActivity {
                 startActivity(int2);
             }
         });
+
+        titulo.setOnClickListener(this);
     }
 
 
@@ -98,5 +101,19 @@ public class Portada extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.registroEditTextTitulo:
+                contador++;
+                if(contador==3){
+                    final Intent intent = new Intent(this, Juego.class);
+                    startActivity(intent);
+                    contador=0;
+                }
+                break;
+        }
+    }
 }
 

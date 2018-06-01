@@ -72,9 +72,14 @@ public class Ingreso extends AppCompatActivity {
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Error, escribe un correo valido");
-            editTextEmail.requestFocus();
-            return;
+
+            if(ObtenerDatos.verificarNombre(email)){
+                email=ObtenerDatos.deNombreACorreo(email);
+            }else{
+                editTextEmail.setError("Error, escribe un usuario valido");
+                editTextEmail.requestFocus();
+                return;
+            }
         }
         if(password.isEmpty()){
             editTextContrasena.setError("Error, escribe un usuario");
