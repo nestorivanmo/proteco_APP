@@ -12,7 +12,6 @@ import android.widget.TextView;
 public class Splash extends AppCompatActivity {
     private TextView tv;
     private ImageView iv;
-    int contador=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class Splash extends AppCompatActivity {
         Thread timer = new Thread(){
             public void run(){
                 try{
-                    sleep(5000);
+                    sleep(3000);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally{
@@ -38,5 +37,5 @@ public class Splash extends AppCompatActivity {
         };
         timer.start();
     }
-
 }
+

@@ -63,7 +63,7 @@ public class Portada extends AppCompatActivity implements View.OnClickListener{
                 startActivity(int2);
             }
         });
-
+        titulo=findViewById(R.id.registroEditTextTitulo);
         titulo.setOnClickListener(this);
     }
 
