@@ -20,7 +20,7 @@ public class SettingsFragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view= inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
        /* Button btn = (Button)view.findViewById(R.id.btnUbicacion);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +29,8 @@ public class SettingsFragment extends Fragment{
                 Intent Bmeters = new Intent( getActivity(), MapsActivity.class);
                 startActivity(Bmeters);
             }
-        });
-        return view;*/
+        });*/
+        return view;
     }
+
 }

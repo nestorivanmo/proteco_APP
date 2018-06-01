@@ -12,10 +12,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/ggg"
+        android:roundIcon="@drawable/ggg"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:label="Proteco">
 
         <activity android:name=".Splash">
             <intent-filter>
@@ -28,6 +29,7 @@
         <activity android:name=".Ingreso" />
         <activity android:name=".Cursos" />
         <activity android:name=".GalleryActivity" />
+        <activity android:name=".TitularesActivity"/>
         <activity android:name=".Portada" />
 
         <meta-data
