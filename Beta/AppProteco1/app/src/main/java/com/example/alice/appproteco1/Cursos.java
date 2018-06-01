@@ -20,6 +20,7 @@ public class Cursos extends AppCompatActivity {
                 inicia).commit();
         ////
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.removeShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(navListener);
     }
 
