@@ -65,7 +65,7 @@ public class BusquedaFragment extends Fragment {
         mDatabaseNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
         mDatabaseNoticias.keepSynced(true);
         mNoticiasList = view.findViewById(R.id.recyclerViewNoticias);
-        mNoticiasList.setHasFixedSize(true);
+        //mNoticiasList.setHasFixedSize(true);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
         mNoticiasList.setLayoutManager(staggeredGridLayoutManager);
 
@@ -76,11 +76,33 @@ public class BusquedaFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+        Log.d(TAG, "onStart: onstart created.");
+
+        FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder> firebaseNoticiaRecyclerAdapter = new FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder>
+                (Noticia.class, R.layout.activity_card_noticias, NoticiaViewHolder.class, mDatabaseNoticias) {
+            @Override
+            protected void populateViewHolder(final NoticiaViewHolder viewHolder, Noticia model, final int position) {
+
+                Log.d(TAG, "populateViewHolder: noticiasPVH started");
+                imagenesNoticias.add(model.getImagen());
+                titulosNoticias.add(model.getTitulo());
+                cuerpoNoticias.add(model.getCuerpo());
+
+                viewHolder.setImagen(getActivity().getApplicationContext(), model.getImagen());
+                viewHolder.setTitulo(model.getTitulo());
+                viewHolder.setCuerpo(model.getCuerpo());
+
+            }
+        };
+        mNoticiasList.setAdapter(firebaseNoticiaRecyclerAdapter);
+
         FirebaseRecyclerAdapter<Titular, TitularViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Titular, TitularViewHolder>
                 (Titular.class, R.layout.activity_card_becarios, TitularViewHolder.class, mDatabaseBecarios) {
             @Override
             protected void populateViewHolder(final TitularViewHolder viewHolder, Titular model, final int position) {
 
+                Log.d(TAG, "populateViewHolder: titularesPVH started");
+                    
                 imagenesTitulares.add(model.getImage());
                 titulares.add(model.getTitular());
                 quotesTitulares.add(model.getQuote());
@@ -107,33 +129,12 @@ public class BusquedaFragment extends Fragment {
                     }
                 });
             }
-
+            
         };
 
 
-       FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder> firebaseNoticiaRecyclerAdapter = new FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder>
-                (Noticia.class, R.layout.activity_card_noticias, NoticiaViewHolder.class, mDatabaseNoticias) {
-            @Override
-            protected void populateViewHolder(final NoticiaViewHolder viewHolder, Noticia model, final int position) {
-
-                imagenesNoticias.add(model.getImagen());
-                titulosNoticias.add(model.getTitulo());
-                cuerpoNoticias.add(model.getCuerpo());
-
-                viewHolder.setImagen(getActivity().getApplicationContext(), model.getImagen());
-                viewHolder.setTitulo(model.getTitulo());
-                viewHolder.setCuerpo(model.getCuerpo());
-
-            }
-
-            @Override
-            public void onBindViewHolder(NoticiaViewHolder viewHolder, final int position) {
-                super.onBindViewHolder(viewHolder, position);
-            }
-       };
-
         mBecariosList.setAdapter(firebaseRecyclerAdapter);
-        mNoticiasList.setAdapter(firebaseNoticiaRecyclerAdapter);
+
     }
 
     public static class TitularViewHolder extends RecyclerView.ViewHolder{
