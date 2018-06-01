@@ -58,12 +58,12 @@ public class BusquedaFragment extends Fragment {
         mBecariosList.setHasFixedSize(true);
         mBecariosList.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
-       /* mDatabaseNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
+        mDatabaseNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
         mDatabaseNoticias.keepSynced(true);
         mNoticiasList = view.findViewById(R.id.recyclerViewNoticias);
         mNoticiasList.setHasFixedSize(true);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
-        mNoticiasList.setLayoutManager(staggeredGridLayoutManager); */
+        mNoticiasList.setLayoutManager(staggeredGridLayoutManager);
 
         return view;
     }
@@ -100,18 +100,20 @@ public class BusquedaFragment extends Fragment {
         };
 
 
-       /* FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder> firebaseNoticiaRecyclerAdapter = new FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder>
+       FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder> firebaseNoticiaRecyclerAdapter = new FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder>
                 (Noticia.class, R.layout.activity_card_noticias, NoticiaViewHolder.class, mDatabaseNoticias) {
             @Override
-            protected void populateViewHolder(NoticiaViewHolder viewHolder, Noticia model, int position) {
+            protected void populateViewHolder(final NoticiaViewHolder viewHolder, Noticia model, final int position) {
 
-                imagenesNoticias.add(model.getImagenNoticia());
-                titulosNoticias.add(model.getTituloNoticia());
-                cuerpoNoticias.add(model.getCuerpoNoticia());
+                imagenesNoticias.add(model.getImagen());
+                titulosNoticias.add(model.getTitulo());
+                cuerpoNoticias.add(model.getCuerpo());
 
-                viewHolder.setImagen(getActivity().getApplicationContext(), model.getImagenNoticia());
-                viewHolder.setTitulo(model.getTituloNoticia());
-                viewHolder.setCuerpo(model.getCuerpoNoticia());
+                viewHolder.setImagen(getActivity().getApplicationContext(), model.getImagen());
+                viewHolder.setTitulo(model.getTitulo());
+                viewHolder.setCuerpo(model.getCuerpo());
+
+                Toast.makeText(getContext(), "Prueba" + titulosNoticias.get(0), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -126,11 +128,10 @@ public class BusquedaFragment extends Fragment {
                     }
                 });
             }
-        }; */
-
+       };
 
         mBecariosList.setAdapter(firebaseRecyclerAdapter);
-        //mNoticiasList.setAdapter(firebaseNoticiaRecyclerAdapter);
+        mNoticiasList.setAdapter(firebaseNoticiaRecyclerAdapter);
     }
 
     public static class TitularViewHolder extends RecyclerView.ViewHolder{

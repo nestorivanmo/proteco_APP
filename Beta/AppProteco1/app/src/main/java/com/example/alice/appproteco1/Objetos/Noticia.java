@@ -2,37 +2,41 @@ package com.example.alice.appproteco1.Objetos;
 
 public class Noticia {
 
-    private String tituloNoticia;
-    private String imagenNoticia;
-    private String cuerpoNoticia;
+    private String titulo;
+    private String imagen;
+    private String cuerpo;
 
-    public Noticia(String tituloNoticia, String imagenNoticia, String cuerpoNoticia) {
-        this.tituloNoticia = tituloNoticia;
-        this.imagenNoticia = imagenNoticia;
-        this.cuerpoNoticia = cuerpoNoticia;
+    public Noticia(String titulo, String imagen, String cuerpo) {
+        this.titulo = titulo;
+        this.imagen = imagen;
+        this.cuerpo = cuerpo;
     }
 
-    public String getTituloNoticia() {
-        return tituloNoticia;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTituloNoticia(String tituloNoticia) {
-        this.tituloNoticia = tituloNoticia;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getImagenNoticia() {
-        return imagenNoticia;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setImagenNoticia(String imagenNoticia) {
-        this.imagenNoticia = imagenNoticia;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
-    public String getCuerpoNoticia() {
-        return cuerpoNoticia;
+    public String getCuerpo() {
+        return cuerpo;
     }
 
-    public void setCuerpoNoticia(String cuerpoNoticia) {
-        this.cuerpoNoticia = cuerpoNoticia;
+    public void setCuerpo(String cuerpo) {
+        this.cuerpo = cuerpo;
+    }
+
+    public Noticia() {
+
     }
 }
