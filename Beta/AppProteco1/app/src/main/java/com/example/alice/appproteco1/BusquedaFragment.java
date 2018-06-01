@@ -58,15 +58,12 @@ public class BusquedaFragment extends Fragment {
         mBecariosList.setHasFixedSize(true);
         mBecariosList.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
-        mDatabaseNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
+       /* mDatabaseNoticias = FirebaseDatabase.getInstance().getReference().child("Noticias");
         mDatabaseNoticias.keepSynced(true);
         mNoticiasList = view.findViewById(R.id.recyclerViewNoticias);
         mNoticiasList.setHasFixedSize(true);
-
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
-
-        mNoticiasList.setLayoutManager(staggeredGridLayoutManager);
-
+        mNoticiasList.setLayoutManager(staggeredGridLayoutManager); */
 
         return view;
     }
@@ -103,7 +100,7 @@ public class BusquedaFragment extends Fragment {
         };
 
 
-        FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder> firebaseNoticiaRecyclerAdapter = new FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder>
+       /* FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder> firebaseNoticiaRecyclerAdapter = new FirebaseRecyclerAdapter<Noticia, NoticiaViewHolder>
                 (Noticia.class, R.layout.activity_card_noticias, NoticiaViewHolder.class, mDatabaseNoticias) {
             @Override
             protected void populateViewHolder(NoticiaViewHolder viewHolder, Noticia model, int position) {
@@ -121,12 +118,6 @@ public class BusquedaFragment extends Fragment {
             @Override
             public void onBindViewHolder(NoticiaViewHolder viewHolder, final int position) {
                 super.onBindViewHolder(viewHolder, position);
-                /*viewHolder.imagen.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        return false;
-                    }
-                });*/
 
                 viewHolder.imagen.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -135,11 +126,11 @@ public class BusquedaFragment extends Fragment {
                     }
                 });
             }
-        };
+        }; */
 
 
         mBecariosList.setAdapter(firebaseRecyclerAdapter);
-        mNoticiasList.setAdapter(firebaseNoticiaRecyclerAdapter);
+        //mNoticiasList.setAdapter(firebaseNoticiaRecyclerAdapter);
     }
 
     public static class TitularViewHolder extends RecyclerView.ViewHolder{
